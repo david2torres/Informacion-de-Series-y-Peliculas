@@ -1,0 +1,10 @@
+<!-- Vista Principal de Peliculas -->
+<h1>Información de Series y Películas</h1>
+<hr>
+
+<div class="card-columns">
+
+  <!--Uso del Componente de tarjeta generico PELICULA-TARJETA-->
+    <!--*ngFor="let pelicula of peliculas; let i = index " -->
+  <app-pelicula-tarjeta  (click)="verPelicula( i )" [pelicula]="pelicula" [index]="i" *ngFor="let pelicula of peliculas; let i = index "></app-pelicula-tarjeta>
+</div>

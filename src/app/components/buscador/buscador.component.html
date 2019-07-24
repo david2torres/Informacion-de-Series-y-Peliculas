@@ -1,0 +1,19 @@
+<!-- Ventana Para Visualizar las Consultas de las Peliculas Consultadas -->
+<h1>Buscando: <small>{{termino}}</small></h1>
+<hr>
+
+<div class="row animated fadeIn Fast " *ngIf="peliculas.length == 0">
+  <div class="col-md-12">
+
+    <!-- Comprobacion de Consulta sin Valor de Retorno -->
+    <div class="alert alert-info" role="alert">
+      No existen resultados con el termino : {{termino}}
+    </div>
+  </div>
+</div>
+
+<!-- Campo de Ventanas devueltas por la Consulta realizada
+      Retorna una varias, según criterio de Busuqeda -->
+<div class="card-columns">
+  <app-pelicula-tarjeta [pelicula]="pelicula" [index]="pelicula.index" *ngFor="let pelicula of peliculas"></app-pelicula-tarjeta>
+</div>

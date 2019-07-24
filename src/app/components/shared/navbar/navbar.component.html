@@ -1,0 +1,35 @@
+<!-- Navbar de la pagina -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <a class="navbar-brand" href="#">
+    <img src="assets/img/favicon.png" width="30" height="30" alt="">
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+<!-- Navegadores de Ventanas -->
+      <li class="nav-item " routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['home']">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['peliculas']">Peliculas</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" >
+        <a class="nav-link" [routerLink]="['about']">About</a>
+      </li>
+    </ul>
+
+<!--Boton y campo para buscar  -->
+    <form class="form-inline my-2 my-lg-0">
+      <!-- Busqueda con accion de la tecla ENTER y boton. con valiacion de caracteres permitidos -->
+    <input class="form-control mr-sm-2"  ngModel pattern="[a-zA-Z-1234567890]*" type="text" placeholder="Buscar Pelicula" (keyup.enter)="buscarPelicula(buscarTexto.value)" #buscarTexto>
+      <button (click)="buscarPelicula(buscarTexto.value)"
+       class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
